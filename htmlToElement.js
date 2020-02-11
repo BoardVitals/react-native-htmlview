@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import htmlparser from 'htmlparser2-without-node-native';
 import entities from 'entities';
 
@@ -86,7 +86,7 @@ export default function htmlToElement(rawHtml, customOpts = {}, done) {
 
       if (node.type === 'tag') {
         if (node.name === 'img') {
-          return <Img key={index} attribs={node.attribs} />;
+          return <View style={{ backgroundColor: 'red' }}/>
         }
 
         let linkPressHandler = null;
